@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent  implements OnInit {
 
   
-  title = 'witaj';
+  title = 'witaj!';
 
   constructor(private authService: AuthService, private route: ActivatedRoute) {
 
