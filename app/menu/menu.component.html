@@ -1,0 +1,11 @@
+
+<article>
+    <h1>{{powitanie}}</h1>
+</article>
+<div *ngIf="isLoggedIn()">
+<ul>
+    <li><a class="active" routerLink="/home">Home</a></li>
+    <li><a href="/corka">Córka</a></li>
+    <li><a href="#" (click)="logout()">Logout</a></li>
+  </ul>
+</div>

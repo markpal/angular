@@ -1,0 +1,22 @@
+<body>
+<br>
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item" *ngFor="let person of people" >
+      {{ person.name }}
+    </li>
+</ol>
+<br>
+<button type="button" [class]="przycisk_css" (click)="Klik()">Success</button>
+<br><br>
+<app-syn [zmiennaImport]="zmiennaEksport" (odpowiedz)="onOdpowiedz($event)"></app-syn>
+<br><br>
+<button type="button" [class]="przycisk_css" (click)="LoadData()">Hello Node.js</button> <!-- You can use PHP -->
+
+<div *ngIf="data">
+  Id: {{ data.id }}<br>
+  Name: {{ data.name }}<br>
+  Age: {{ data.age }}
+</div>
+
+
+</body>

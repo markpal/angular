@@ -1,0 +1,35 @@
+<p>corka works!</p>
+<app-wnuk></app-wnuk>
+<br>
+<hr>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="form-outline w-25">
+      <label>Email:</label>
+      <input type="email" formControlName="email" class="form-control" >
+      <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+        <div *ngIf="myForm.get('email')?.errors?.['required']" class="error">Email is required</div>
+        <div *ngIf="myForm.get('email')?.errors?.['email']" class="error">Invalid email format</div>
+      </div>
+    </div>
+    
+    <div class="form-outline w-25">
+      <label>Name:</label>
+      <input type="text" formControlName="name" class="form-control" >
+      <div *ngIf="myForm.get('name')?.invalid && (myForm.get('name')?.dirty || myForm.get('name')?.touched)" class="error">
+        <div *ngIf="myForm.get('name')?.errors?.['required']" class="error">Name is required</div>
+      </div>
+    </div>
+    
+    <div class="form-outline w-25">
+      <label>Age:</label>
+      <input type="number" formControlName="age" class="form-control" >
+      <div *ngIf="myForm.get('age')?.invalid && (myForm.get('age')?.dirty || myForm.get('age')?.touched)">
+        <div *ngIf="myForm.get('age')?.errors?.['required']" class="error">Age is required</div>
+        <div *ngIf="myForm.get('age')?.errors?.['min']" class="error">Age must be at least 18</div>
+      </div>
+    </div>
+    <br>
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-info">Submit</button>
+  </form>
+  <div class="info">{{resp}}</div>
+  <br><br>

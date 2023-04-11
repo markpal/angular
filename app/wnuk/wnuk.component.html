@@ -1,0 +1,16 @@
+<p>wnuk works!</p>
+<form #formularz="ngForm">
+    <h3>Generator losowy</h3>
+    <label>
+        <span>Liczba min</span>
+        <input type="number" id="min" name="min" [(ngModel)]="min" class="form-control" >
+    </label>
+    <br>
+    <label>
+        <span>Liczba max</span>
+        <input type="number" id="max" name="max" class="form-control" [(ngModel)]="max">
+    </label>
+    <br><br>
+    <button type="submit" (click)="Losuj()">Losuj</button>
+    <div *ngIf="data">{{data.wynik}}</div>
+</form>
