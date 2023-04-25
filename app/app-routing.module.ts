@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'wnuk-page', component: WnukComponent,  canActivate : [AuthGuardService] },
   { path: 'home', component: HomeComponent,  canActivate : [AuthGuardService] },
+  { path: 'home/:id', component: HomeComponent,  canActivate : [AuthGuardService] },
   { path: 'login', component: LoginComponent,  canActivate : [AuthGuardService] },
   { path: 'corka', component: CorkaComponent,  canActivate : [AuthGuardService]},
   // Define a wildcard route to match any undefined route
