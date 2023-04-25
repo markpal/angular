@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
  
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent {
     status : boolean = true;
     data !: Data;
     routeInfo : string = "";
+    id = -1;
 
 
   zmiennaEksport: string[] = ['17:00', 'pływalnią'];
@@ -59,7 +61,16 @@ export class HomeComponent {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam) {
+      this.id = +idParam;
+    } else {
+    // handle case where id parameter is missing
+    }
+  }
 
 
 
