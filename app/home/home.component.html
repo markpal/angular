@@ -5,7 +5,7 @@
       {{ person.name }}
     </li>
 </ol>
-{{id}}
+
 <br>
 <button type="button" [class]="przycisk_css" (click)="Klik()">Success</button>
 <br><br>
@@ -18,6 +18,8 @@
   Name: {{ data.name }}<br>
   Age: {{ data.age }}
 </div>
+<br>
+<div *ngIf="id">{{people[id].name}}</div>
 
 
 </body>
